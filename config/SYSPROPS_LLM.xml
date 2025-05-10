@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<apiroConf version="1" xmlns="http://apiro.com/apiro/v1/root">
+    <loadGroups/>
+    <loadOrder>10</loadOrder>
+    <envProperties>
+
+        <envProperty>
+            <name>OPENAI_GPT4o_RESERVE_TOKEN</name>
+            <description>Reserved Tokens is the expected tokens that are consumed for the average request</description>
+            <value>5000</value>
+            <encrypted>false</encrypted>
+            <scrub>false</scrub>
+        </envProperty>
+
+        <envProperty>
+            <name>OPENAI_GPT4o_RPM_LIMIT</name>
+            <description>The rate per minute (RPM) limit for GPT4o for Tier1 is 500. We are setting it to 450</description>
+            <value>450</value>
+            <encrypted>false</encrypted>
+            <scrub>false</scrub>
+        </envProperty>
+
+        <envProperty>
+            <name>OPENAI_GPT4o_TOKENS_PER_MIN_LIMIT</name>
+            <description>The tokens per minute (TPM) limit for GPT4o for Tier1 is 30 000. We are setting it to 29 000</description>
+            <value>29000</value>
+            <encrypted>false</encrypted>
+            <scrub>false</scrub>
+        </envProperty>
+
+
+        <envProperty>
+            <name>ANTHROPIC_CLAUDE_RESERVE_TOKEN</name>
+            <description>Reserved Tokens is the expected tokens that are consumed for the average request</description>
+            <value>5000</value>
+            <encrypted>false</encrypted>
+            <scrub>false</scrub>
+        </envProperty>
+
+        <envProperty>
+            <name>ANTHROPIC_CLAUDE_RPM_LIMIT</name>
+            <description>The rate per minute (RPM) limit for GPT4o for Tier1 is 500. We are setting it to 450</description>
+            <value>450</value>
+            <encrypted>false</encrypted>
+            <scrub>false</scrub>
+        </envProperty>
+
+        <envProperty>
+            <name>ANTHROPIC_CLAUDE_TOKENS_PER_MIN_LIMIT</name>
+            <description>The tokens per minute (TPM) limit for GPT4o for Tier1 is 40 000. We are setting it to 39 000</description>
+            <value>39000</value>
+            <encrypted>false</encrypted>
+            <scrub>false</scrub>
+        </envProperty>
+
+        <envProperty>
+            <name>ANTHROPIC_LLM_TO_USE</name>
+            <description>[PLACEHOLDER]</description>
+            <value>claude-3-5-sonnet-20240620</value>
+            <encrypted>false</encrypted>
+            <scrub>true</scrub>
+        </envProperty>
+        
+        <envProperty>
+            <name>ANTHROPIC_LLM_TO_USE</name>
+            <description>[PLACEHOLDER]</description>
+            <value>claude-3-5-sonnet-20240620</value>
+            <encrypted>false</encrypted>
+            <scrub>true</scrub>
+        </envProperty>
+
+        <envProperty>
+            <name>OPENAI_API_KEY</name>
+            <description>ebeasy open api development env</description>
+            <value>5VmR2etKENyk8eeQ56+fUDOKA3QNmcmraA8Op4h+6eqi6aRyNRhIhQOs5o07nzh3m8uhib7O7AhDOb64WUx/a4BKph/pA5n/0PMx6sxN2dLk99cfI/IIT8xW7tvHO9ipTrcbjEuIjFY7Q2sOSc0qRmG6xruawYq/vXbzUNDaGIsEWsZFqyaOhhfeU12fAOb66INcPlNr8XK13NHNWsT3Ngq3tNLZzsT+fZkpc68QLAQ+mjsZHT4mXUZDrZx/Kv5PSY4j69V+2YwiYbuAedKWgJyz1jOjKbbD8Q5MP08ZCsM=</value>
+            <encrypted>true</encrypted>
+            <scrub>true</scrub>
+        </envProperty>
+
+        <envProperty>
+            <name>ANTHROPIC_API_KEY</name>
+            <description>[PLACEHOLDER]</description>
+            <value>DYSrNHUdSE/cq3S/S/y+hx8B8c2j9+CRB0Nv7IkynV+3ghjXqoy4wYCfQxr59ff3YYM9LSXmIZAdqoS8ltivd00fgGiDAnQXqN6ocJALXh1W0ZYkbhlaPueEIVf2V1ToaaInm8d8XdWINBZbSdP8HMdDcZdAnjHCEadWGedG8JHOeP5yqfbvA818DYkwCpY7YTJ7u0rkndcJyGljKW9bkg==</value>
+            <encrypted>true</encrypted>
+        </envProperty>
+
+
+
+    </envProperties>
+</apiroConf>
+
+
+
+
