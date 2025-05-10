@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<apiroConf version="1" xmlns="http://apiro.com/apiro/v1/root">
+    <loadGroups/>
+    <loadOrder>10</loadOrder>
+    <envProperties>
+        <envProperty>
+            <name>GITHUB_USERNAME</name>
+            <description>This is my username to access GitHub repositories</description>
+            <value>christosptr</value>
+            <encrypted>false</encrypted>
+        </envProperty>
+
+
+        <envProperty>
+            <name>GITHUB_PW</name>
+            <description>This is my encrypted password to access the GitHub repositories</description>
+            <value>AKU9Gtnxtkjlt78xgElSr7msMaAPU/GDTiJSajDVZgG8/po6dmtvLanpqehglwxgSD4kUdM+KRTRk2Kwp2/eKZQpoAMrUQgLSjf8LD5dCwN18ITIYFI9Br9XBIrye6B2</value>
+            <encrypted>true</encrypted>
+        </envProperty>
+
+        <envProperty>
+            <name>GITHUB_USERNAME</name>
+            <description>This is my username to access GitHub repositories</description>
+            <value>christosptr</value>
+            <encrypted>false</encrypted>
+        </envProperty>
+
+        <envProperty>
+            <name>GIT_REPO_MAIN_PLUGIN_SBR_CONNECTOR</name>
+            <description>Business Registration plugin</description>
+            <value>https://github.com/christosptr/wp-api-git.git</value>
+            <encrypted>false</encrypted>
+        </envProperty>
+
+        <envProperty>
+            <name>GIT_REPO_MAIN_PLUGIN_SBR_CONNECTOR</name>
+            <description>Business Search plugin</description>
+            <value>https://github.com/christosptr/aim-sbr-api-git.git</value>
+            <encrypted>false</encrypted>
+        </envProperty>
+
+
+
+    </envProperties>
+</apiroConf>

@@ -1,0 +1,1255 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema elementFormDefault="qualified" version="1.0"
+           targetNamespace="http://apiro.com/apiro/v1/root"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:ap="http://apiro.com/apiro/v1/root"
+>
+
+
+    <xs:element name="apiroConf" type="ap:genDoc"/>
+
+    <xs:complexType name="genDoc">
+        <xs:all>
+            <xs:element name="loadGroups" minOccurs="0">
+                <xs:simpleType>
+                    <xs:list itemType="xs:string"/>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="loadOrder" type="xs:int"/>
+            <xs:element name="localRefs" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="localRef" type="ap:genLocalRef" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="userMetas" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="userMeta" type="ap:genUserMetaData" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="executionDomains" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="executionDomain" type="ap:genExecutionDomain" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="appliedKaiICTExtensions" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="appliedKaiICTExtension" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="scriptSurfaceExtensions" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="scriptSurfaceExtension" type="ap:genScriptSurfaceExtension" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="schemas" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="schema" type="ap:genSchema" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="schemaMixins" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="schemaMixin" type="ap:genSchemaMixin" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="schemaMixinMappings" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="schemaMixinMapping" type="ap:genMixinMapping" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="dataPointTemplates" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="dataPointTemplate" type="ap:genSchemaDataItem" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="universalProcessors" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="universalProcessor" type="ap:genUniversalProcessors" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="dataFeeds" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="dataFeed" type="ap:genDataFeed" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="dataSinks" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="dataSink" type="ap:genDataSink" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="dataBlockCollectFilters" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="dataBlockCollectFilter" type="ap:genRateCollectionFilterInstance" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="dataSources" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="dataSource" type="ap:genDataSource" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="distributions" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="distribution" type="ap:genDistribution" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="extensionDefinitions" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="extensionDefinition" type="ap:genScriptableDef" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="globalInstances" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="globalInstance" type="ap:genScriptableInstGlobal" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="envProperties" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="envProperty" type="ap:genSysEnv" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="gitConfigurations" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="gitConfiguration" type="ap:genConfigSource" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="scriptSecurityRealms" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="scriptSecurityRealm" type="ap:genScriptSecurityRealm" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="authMappings" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="authMapping" type="ap:genAuthMapping" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="uiExtensions" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="uiExtension" type="ap:genUIExtension" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="microservices" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="microservice" type="ap:genMicroservice" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="eventListeners" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:choice minOccurs="0" maxOccurs="unbounded">
+                            <xs:element name="eventListenerDataBlockAlert" type="ap:genEventListenerDataBlockAlert"/>
+                            <xs:element name="eventListenerConsDataBlock" type="ap:genEventListenerConsDataBlock"/>
+                            <xs:element name="eventListenerRawDataBlock" type="ap:genEventListenerRawDataBlock"/>
+                            <xs:element name="eventListenerDataFeed" type="ap:genEventListenerDataFeed"/>
+                            <xs:element name="eventListenerCustom" type="ap:genEventListenerCustom"/>
+                        </xs:choice>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="kaiToolExtensions" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="kaiToolExtension" type="ap:genKaiToolExtension" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="kaiSpecifications" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="kaiSpecification" type="ap:genKaiSpecification" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="cascadingKaiSpecifications" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="cascadingKaiSpecification" type="ap:genKaiSpecCascaded" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="kaiICTExtensions" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="kaiICTExtension" type="ap:genKaiTrainingExtension" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="kaiSpecification" type="xs:string" minOccurs="0"/>
+            <xs:element name="kaiSpecHash" type="xs:string" minOccurs="0"/>
+        </xs:all>
+        <xs:attribute name="version" type="xs:int" use="required"/>
+        <xs:attribute name="xmlns" type="xs:string"/>
+    </xs:complexType>
+
+    <xs:complexType name="genLocalRef">
+        <xs:all>
+            <xs:element name="value" type="xs:string" minOccurs="0"/>
+            <xs:element name="jsonEscape" type="xs:boolean" minOccurs="0"/>
+        </xs:all>
+        <xs:attribute name="name" type="xs:string"/>
+    </xs:complexType>
+
+    <xs:complexType name="genUserMetaData">
+        <xs:all>
+            <xs:element name="userName" type="xs:string" minOccurs="0"/>
+            <xs:element name="metaData" type="ap:genMetaData" minOccurs="0"/>
+        </xs:all>
+    </xs:complexType>
+
+    <xs:complexType name="genMetaData">
+        <xs:sequence>
+            <xs:element name="item" type="ap:genMetaDataItem" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="genMetaDataItem">
+        <xs:sequence>
+            <xs:element name="simpleValues" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="simpleValue" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="openValue" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="name" type="xs:string"/>
+    </xs:complexType>
+
+    <xs:complexType name="genExecutionDomain">
+        <xs:complexContent>
+            <xs:extension base="ap:genBase">
+                <xs:all>
+                    <xs:element name="description" type="xs:string" minOccurs="0"/>
+                    <xs:element name="manual" type="xs:boolean" minOccurs="0"/>
+                    <xs:element name="invertedHierarchy" type="xs:boolean" minOccurs="0"/>
+                    <xs:element name="invertedHeirarchy" type="xs:boolean" minOccurs="0"/>
+                    <xs:element name="repositories" minOccurs="0">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="repository" type="ap:genMvnRepository" minOccurs="0" maxOccurs="unbounded"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="dependencies" minOccurs="0">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="dependency" type="ap:genMvnDependency" minOccurs="0" maxOccurs="unbounded"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:all>
+                <xs:attribute name="name" type="xs:string"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="genBase">
+        <xs:all>
+            <xs:element name="groupTags" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="groupTag" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="metaData" type="ap:genMetaData" minOccurs="0"/>
+            <xs:element name="kaiSpecification" type="xs:string" minOccurs="0"/>
+            <xs:element name="kaiProcess" type="xs:string" minOccurs="0"/>
+            <xs:element name="kaiFeedback" type="xs:string" minOccurs="0"/>
+            <xs:element name="authorNote" type="xs:string" minOccurs="0"/>
+            <xs:element name="author" type="xs:string" minOccurs="0"/>
+            <xs:element name="kaiCascadeTrack">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="key" minOccurs="0" type="xs:string"/>
+                                    <xs:element name="value" minOccurs="0" type="xs:string"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:all>
+    </xs:complexType>
+
+    <xs:complexType name="genMvnRepository">
+        <xs:sequence>
+            <xs:element name="id" type="xs:string" minOccurs="0"/>
+            <xs:element name="url" type="xs:string" minOccurs="0"/>
+            <xs:element name="username" type="xs:string" minOccurs="0"/>
+            <xs:element name="password" type="xs:string" minOccurs="0"/>
+            <xs:element name="snapshots" type="xs:boolean" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="genMvnDependency">
+        <xs:sequence>
+            <xs:element name="groupId" type="xs:string" minOccurs="0"/>
+            <xs:element name="artifactId" type="xs:string" minOccurs="0"/>
+            <xs:element name="version" type="xs:string" minOccurs="0"/>
+            <xs:element name="classifier" type="xs:string" minOccurs="0"/>
+            <xs:element name="scope" type="xs:string" minOccurs="0"/>
+            <xs:element name="exclusions" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="exclusion" type="ap:genDepExclusion" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="genDepExclusion">
+        <xs:sequence>
+            <xs:element name="groupId" type="xs:string" minOccurs="0"/>
+            <xs:element name="artifactId" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="genScriptSurfaceExtension">
+        <xs:complexContent>
+            <xs:extension base="ap:genBase">
+                <xs:all>
+                    <xs:element name="compileStatic" type="xs:boolean" minOccurs="0"/>
+                    <xs:element name="imports" type="xs:string" minOccurs="0"/>
+                    <xs:element name="code" type="xs:string" minOccurs="0"/>
+                    <xs:element name="inclusionPredicate" type="xs:string" minOccurs="0"/>
+                </xs:all>
+                <xs:attribute name="name" type="xs:string"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="genSchema">
+        <xs:complexContent>
+            <xs:extension base="ap:genBase">
+                <xs:all>
+                    <xs:element name="description" type="xs:string" minOccurs="0"/>
+                    <xs:element name="abstract" type="xs:boolean" minOccurs="0"/>
+                    <xs:element name="workingRetention" type="xs:string" minOccurs="0"/>
+                    <xs:element name="historicalRetention" type="xs:string" minOccurs="0"/>
+                    <xs:element name="allowHistoricalUpdate" type="xs:boolean" minOccurs="0"/>
+                    <xs:element name="biTemporal" type="xs:boolean" minOccurs="0"/>
+                    <xs:element name="temporalKey" type="xs:string" minOccurs="0"/>
+                    <xs:element name="temporalTimeFormat" type="xs:string" minOccurs="0"/>
+                    <xs:element name="temporalCurrentExpression" type="xs:string" minOccurs="0"/>
+                    <xs:element name="identityKeys" minOccurs="0">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="identityKey" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="shardKeys" minOccurs="0">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="shardKey" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="dataPoints" minOccurs="0">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="dataPoint" type="ap:genSchemaDataItem" minOccurs="0" maxOccurs="unbounded"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="schemaAppliedProcessors" type="ap:genSchemaProcessors" minOccurs="0"/>
+                    <xs:element name="dataPointCollections" minOccurs="0">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="dataPointCollection" type="ap:genScriptEntity" minOccurs="0" maxOccurs="unbounded"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="alerts" minOccurs="0">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="alert" type="ap:genScriptEntity" minOccurs="0" maxOccurs="unbounded"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="backingLake" type="ap:genScriptEntity" minOccurs="0"/>
+                </xs:all>
+                <xs:attribute name="name" type="xs:string"/>
+                <xs:attribute name="defBacked" type="xs:boolean"/>
+                <xs:attribute name="historical" type="xs:boolean"/>
+                <xs:attribute name="extendsFrom" type="xs:string"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="genSchemaDataItem">
+        <xs:complexContent>
+            <xs:extension base="ap:genBase">
+                <xs:all>
+                    <xs:element name="description" type="xs:string" minOccurs="0"/>
+                    <xs:element name="kaiHint" type="xs:string" minOccurs="0"/>
+                    <xs:element name="nullable" type="xs:boolean" minOccurs="0"/>
+                    <xs:element name="noOverride" type="xs:boolean" minOccurs="0"/>
+                    <xs:element name="sampleData" type="xs:string" minOccurs="0"/>
+                    <xs:element name="consolidationAlgorithm" type="ap:genScriptPipelineEntity" minOccurs="0"/>
+                    <xs:element name="rawDPValidators" minOccurs="0">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="rawDPValidator" type="ap:genScriptPipelineELBoundEntity" minOccurs="0" maxOccurs="unbounded"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="rawDPProcessors" minOccurs="0">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="rawDPProcessor" type="ap:genScriptPipelineEntity" minOccurs="0" maxOccurs="unbounded"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="consDPValidators" minOccurs="0">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="consDPValidator" type="ap:genScriptPipelineELBoundEntity" minOccurs="0" maxOccurs="unbounded"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="consDPProcessors" minOccurs="0">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="consDPProcessor" type="ap:genScriptPipelineEntity" minOccurs="0" maxOccurs="unbounded"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="pii" type="xs:boolean" minOccurs="0"/>
+                    <xs:element name="encrypted" type="xs:boolean" minOccurs="0"/>
+                    <xs:element name="encryptionKeyId" type="xs:string" minOccurs="0"/>
+                    <xs:element name="ignoreChangeDetect" type="xs:boolean" minOccurs="0"/>
+                </xs:all>
+                <xs:attribute name="name" type="xs:string"/>
+                <xs:attribute name="dataType" type="dataType"/>
+                <xs:attribute name="extendsFrom" type="xs:string"/>
+                <xs:attribute name="displayName" type="xs:string"/>
+                <xs:attribute name="defaultValue" type="xs:string"/>
+                <xs:attribute name="canEditValid" type="xs:boolean"/>
+                <xs:attribute name="canEditViolated" type="xs:boolean"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="genScriptPipelineEntity">
+        <xs:complexContent>
+            <xs:extension base="ap:genScriptEntity">
+                <xs:sequence>
+                    <xs:element name="execPredicate" type="xs:string" minOccurs="0"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="genScriptEntity">
+        <xs:complexContent>
+            <xs:extension base="ap:genBase">
+                <xs:all>
+                    <xs:element name="description" type="xs:string" minOccurs="0"/>
+                    <xs:element name="config" type="ap:free" minOccurs="0"/>
+                    <xs:element name="enabled" type="xs:boolean"/>
+                    <xs:element name="executionDomain" type="xs:string" minOccurs="0"/>
+                    <xs:element name="execPriority" type="xs:int" minOccurs="0"/>
+                </xs:all>
+                <xs:attribute name="name" type="xs:string"/>
+                <xs:attribute name="definition" type="xs:string"/>
+                <xs:attribute name="globalInstance" type="xs:string"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="free">
+        <xs:sequence>
+            <xs:any processContents="skip" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:anyAttribute processContents="skip"/>
+    </xs:complexType>
+
+    <xs:complexType name="genScriptPipelineELBoundEntity">
+        <xs:complexContent>
+            <xs:extension base="ap:genScriptPipelineEntity">
+                <xs:sequence>
+                    <xs:element name="lateBound" type="xs:boolean" minOccurs="0"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="genSchemaProcessors">
+        <xs:complexContent>
+            <xs:extension base="ap:genBase">
+                <xs:all>
+                    <xs:element name="rawDPValidators" minOccurs="0">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="rawDPValidator" type="ap:genScriptPipelineELBoundEntity" minOccurs="0" maxOccurs="unbounded"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="rawDPProcessors" minOccurs="0">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="rawDPProcessor" type="ap:genScriptPipelineEntity" minOccurs="0" maxOccurs="unbounded"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="consDPValidators" minOccurs="0">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="consDPValidator" type="ap:genScriptPipelineELBoundEntity" minOccurs="0" maxOccurs="unbounded"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="consDPProcessors" minOccurs="0">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="consDPProcessor" type="ap:genScriptPipelineEntity" minOccurs="0" maxOccurs="unbounded"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="dataBlockProcessors" minOccurs="0">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="dataBlockProcessor" type="ap:genScriptPipelineEntity" minOccurs="0" maxOccurs="unbounded"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:all>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="genSchemaMixin">
+        <xs:complexContent>
+            <xs:extension base="ap:genBase">
+                <xs:all>
+                    <xs:element name="dataPoints" minOccurs="0">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="dataPoint" type="ap:genSchemaDataItem" minOccurs="0" maxOccurs="unbounded"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="dataBlockProcessors" minOccurs="0">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="dataBlockProcessor" type="ap:genScriptEntity" minOccurs="0" maxOccurs="unbounded"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="dataPointCollections" minOccurs="0">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="dataPointCollection" type="ap:genScriptEntity" minOccurs="0" maxOccurs="unbounded"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="schemaAppliedProcessors" type="ap:genSchemaProcessors" minOccurs="0"/>
+                </xs:all>
+                <xs:attribute name="name" type="xs:string"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="genMixinMapping">
+        <xs:complexContent>
+            <xs:extension base="ap:genBase">
+                <xs:all>
+                    <xs:element name="schema" type="xs:string" minOccurs="0"/>
+                    <xs:element name="appliedMixins" minOccurs="0">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="appliedMixin" type="ap:genAppliedMixin" minOccurs="0" maxOccurs="unbounded"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:all>
+                <xs:attribute name="name" type="xs:string"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="genAppliedMixin">
+        <xs:all>
+            <xs:element name="name" type="xs:string" minOccurs="0"/>
+            <xs:element name="instanceMeta" type="ap:genMetaData" minOccurs="0"/>
+        </xs:all>
+    </xs:complexType>
+
+    <xs:complexType name="genUniversalProcessors">
+        <xs:complexContent>
+            <xs:extension base="ap:genBase">
+                <xs:all>
+                    <xs:element name="execPredicate" type="xs:string" minOccurs="0"/>
+                    <xs:element name="rawDPValidators" minOccurs="0">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="rawDPValidator" type="ap:genScriptPipelineELBoundEntity" minOccurs="0" maxOccurs="unbounded"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="rawDPProcessors" minOccurs="0">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="rawDPProcessor" type="ap:genScriptPipelineEntity" minOccurs="0" maxOccurs="unbounded"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="consDPValidators" minOccurs="0">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="consDPValidator" type="ap:genScriptPipelineELBoundEntity" minOccurs="0" maxOccurs="unbounded"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="consDPProcessors" minOccurs="0">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="consDPProcessor" type="ap:genScriptPipelineEntity" minOccurs="0" maxOccurs="unbounded"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="dataBlockProcessors" minOccurs="0">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="dataBlockProcessor" type="ap:genScriptPipelineEntity" minOccurs="0" maxOccurs="unbounded"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:all>
+                <xs:attribute name="name" type="xs:string"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="genDataFeed">
+        <xs:complexContent>
+            <xs:extension base="ap:genScriptableInst">
+                <xs:all>
+                    <xs:element name="enabled" type="xs:boolean" default="true" minOccurs="0"/>
+                    <xs:element name="partitionCode" type="xs:string" default="" minOccurs="0"/>
+                    <xs:element name="schema" type="xs:string" minOccurs="0"/>
+                    <xs:element name="push" type="xs:boolean" minOccurs="0"/>
+                    <xs:element name="pull" type="xs:boolean" minOccurs="0"/>
+                    <xs:element name="feedAuditArchiver" type="ap:genScriptEntity" minOccurs="0"/>
+                    <xs:element name="cronTriggers" minOccurs="0">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="cronTrigger" type="ap:genCronTrigger" minOccurs="0" maxOccurs="unbounded"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:all>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="genScriptableInst" abstract="true">
+        <xs:complexContent>
+            <xs:extension base="ap:genBase">
+                <xs:all>
+                    <xs:element name="description" type="xs:string" minOccurs="0"/>
+                    <xs:element name="enabled" type="xs:boolean"/>
+                    <xs:element name="abstract" type="xs:boolean" default="false" minOccurs="0"/>
+                    <xs:element name="inheritable" type="xs:boolean" default="true" minOccurs="0"/>
+                    <xs:element name="execPriority" type="xs:int" default="50" minOccurs="0"/>
+                    <xs:element name="execPredicate" type="xs:string" minOccurs="0"/>
+                    <xs:element name="config" type="xs:anyType" minOccurs="0"/>
+                    <xs:element name="initDataSchema" type="xs:string" minOccurs="0"/>
+                    <xs:element name="initData" type="xs:anyType" minOccurs="0"/>
+                    <xs:element name="sampleConfig" type="xs:string" minOccurs="0"/>
+                    <xs:element name="longLived" type="xs:boolean" default="true" minOccurs="0"/>
+                    <xs:element name="executionDomain" type="xs:string" minOccurs="0"/>
+                </xs:all>
+                <xs:attribute name="name" type="xs:string" use="required"/>
+                <xs:attribute name="definition" type="xs:string"/>
+                <xs:attribute name="globalInstance" type="xs:string"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="genCronTrigger">
+        <xs:all>
+            <xs:element name="description" type="xs:string" minOccurs="0"/>
+            <xs:element name="cron" type="xs:string" minOccurs="0"/>
+        </xs:all>
+    </xs:complexType>
+
+    <xs:complexType name="genDataSink">
+        <xs:complexContent>
+            <xs:extension base="ap:genScriptableInst">
+                <xs:all/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="genRateCollectionFilterInstance">
+        <xs:complexContent>
+            <xs:extension base="ap:genScriptableInst">
+                <xs:sequence>
+                    <xs:element name="schema" type="xs:string" minOccurs="0"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="genDataSource">
+        <xs:complexContent>
+            <xs:extension base="ap:genScriptableInst">
+                <xs:all/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="genDistribution">
+        <xs:complexContent>
+            <xs:extension base="ap:genBase">
+                <xs:all>
+                    <xs:element name="description" type="xs:string" minOccurs="0"/>
+                    <xs:element name="enabled" type="xs:boolean" default="true" minOccurs="0"/>
+                    <xs:element name="dataBlockCollection" type="ap:genScriptEntity" minOccurs="0"/>
+                    <xs:element name="formatter" type="ap:genScriptEntity" minOccurs="0"/>
+                    <xs:element name="dataPoints" minOccurs="0">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="dataPoint" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="defaultExclude" type="xs:boolean" minOccurs="0"/>
+                    <xs:element name="dataPointCollections" minOccurs="0">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="dataPointCollection" type="ap:genScriptEntity" minOccurs="0" maxOccurs="unbounded"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="historicalDPCollections" minOccurs="0">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="historicalDPCollection" type="ap:genScriptEntity" minOccurs="0" maxOccurs="unbounded"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="extRefs" minOccurs="0">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="extRef" type="ap:eRef" minOccurs="0" maxOccurs="unbounded"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="dataSinks" minOccurs="0">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="dataSink" type="ap:genScriptEntity" minOccurs="0" maxOccurs="unbounded"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="cronTriggers" minOccurs="0">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="cronTrigger" type="ap:genCronTrigger" minOccurs="0" maxOccurs="unbounded"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="autoTrigger" type="xs:boolean" minOccurs="0"/>
+                </xs:all>
+                <xs:attribute name="name" type="xs:string" use="required"/>
+                <xs:attribute name="schema" type="xs:string" use="required"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="eRef">
+        <xs:sequence>
+            <xs:element name="ref" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="name" type="xs:string"/>
+    </xs:complexType>
+
+    <xs:complexType name="genScriptableDef">
+        <xs:complexContent>
+            <xs:extension base="ap:genBase">
+                <xs:all>
+                    <xs:element name="description" type="xs:string" minOccurs="0"/>
+                    <xs:element name="dataTypes" minOccurs="0">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="dataType" type="dataType" minOccurs="0" maxOccurs="unbounded"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="script" type="xs:string" minOccurs="0"/>
+                    <xs:element name="configSchema" type="xs:string" minOccurs="0"/>
+                    <xs:element name="configSample" type="xs:string" minOccurs="0"/>
+                    <xs:element name="configDesc" type="xs:string" minOccurs="0"/>
+                    <xs:element name="longLived" type="xs:boolean" minOccurs="0"/>
+                    <xs:element name="executionDomain" type="xs:string" minOccurs="0"/>
+                </xs:all>
+                <xs:attribute name="extensionType" type="ap:knownDefType"/>
+                <xs:attribute name="name" type="xs:string"/>
+                <xs:attribute name="language" type="ap:knownImplementationLanguage"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="genScriptableInstGlobal">
+        <xs:complexContent>
+            <xs:extension base="ap:genScriptableInst">
+                <xs:all/>
+                <xs:attribute name="extensionType" type="ap:knownDefType" use="required"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="genSysEnv">
+        <xs:complexContent>
+            <xs:extension base="ap:genBase">
+                <xs:all>
+                    <xs:element name="name" type="xs:string" minOccurs="0"/>
+                    <xs:element name="description" type="xs:string" minOccurs="0"/>
+                    <xs:element name="env" type="xs:string" minOccurs="0"/>
+                    <xs:element name="value" type="xs:string" minOccurs="0"/>
+                    <xs:element name="encrypted" type="xs:boolean" minOccurs="0"/>
+                    <xs:element name="scrub" type="xs:boolean" default="false" minOccurs="0"/>
+                    <xs:element name="jsonEscape" type="xs:boolean" minOccurs="0"/>
+                </xs:all>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="genConfigSource">
+        <xs:complexContent>
+            <xs:extension base="ap:genBase">
+                <xs:all>
+                    <xs:element name="url" type="xs:string"/>
+                    <xs:element name="username" type="xs:string"/>
+                    <xs:element name="password" type="xs:string" minOccurs="0"/>
+                    <xs:element name="key" type="xs:string" minOccurs="0"/>
+                    <xs:element name="branch" type="xs:string" minOccurs="0"/>
+                    <xs:element name="pref" type="xs:string" minOccurs="0"/>
+                    <xs:element name="readOnly" type="xs:boolean" minOccurs="0"/>
+                    <xs:element name="loadPermitPredicate" type="xs:string" minOccurs="0"/>
+                    <xs:element name="scriptSecurityRealm" type="xs:string" minOccurs="0"/>
+                </xs:all>
+                <xs:attribute name="name" type="xs:string" use="required"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="genScriptSecurityRealm">
+        <xs:complexContent>
+            <xs:extension base="ap:genBase">
+                <xs:all>
+                    <xs:element name="name" type="xs:string" minOccurs="0"/>
+                    <xs:element name="staticStars" minOccurs="0">
+                        <xs:simpleType>
+                            <xs:list itemType="xs:string"/>
+                        </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="allowedConstantTypes" minOccurs="0">
+                        <xs:simpleType>
+                            <xs:list itemType="xs:string"/>
+                        </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="allowedExpressions" minOccurs="0">
+                        <xs:simpleType>
+                            <xs:list itemType="xs:string"/>
+                        </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="allowedImports" minOccurs="0">
+                        <xs:simpleType>
+                            <xs:list itemType="xs:string"/>
+                        </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="allowedReceivers" minOccurs="0">
+                        <xs:simpleType>
+                            <xs:list itemType="xs:string"/>
+                        </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="allowedStarImports" minOccurs="0">
+                        <xs:simpleType>
+                            <xs:list itemType="xs:string"/>
+                        </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="allowedStatements" minOccurs="0">
+                        <xs:simpleType>
+                            <xs:list itemType="xs:string"/>
+                        </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="allowedStaticImports" minOccurs="0">
+                        <xs:simpleType>
+                            <xs:list itemType="xs:string"/>
+                        </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="allowedStaticStarImports" minOccurs="0">
+                        <xs:simpleType>
+                            <xs:list itemType="xs:string"/>
+                        </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="allowedTokens" minOccurs="0">
+                        <xs:simpleType>
+                            <xs:list itemType="xs:string"/>
+                        </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="disAllowedConstantTypes" minOccurs="0">
+                        <xs:simpleType>
+                            <xs:list itemType="xs:string"/>
+                        </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="disAllowedExpressions" minOccurs="0">
+                        <xs:simpleType>
+                            <xs:list itemType="xs:string"/>
+                        </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="disAllowedImports" minOccurs="0">
+                        <xs:simpleType>
+                            <xs:list itemType="xs:string"/>
+                        </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="disAllowedReceivers" minOccurs="0">
+                        <xs:simpleType>
+                            <xs:list itemType="xs:string"/>
+                        </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="disAllowedStarImports" minOccurs="0">
+                        <xs:simpleType>
+                            <xs:list itemType="xs:string"/>
+                        </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="disAllowedStatements" minOccurs="0">
+                        <xs:simpleType>
+                            <xs:list itemType="xs:string"/>
+                        </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="disAllowedStaticImports" minOccurs="0">
+                        <xs:simpleType>
+                            <xs:list itemType="xs:string"/>
+                        </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="disAllowedStaticStarImports" minOccurs="0">
+                        <xs:simpleType>
+                            <xs:list itemType="xs:string"/>
+                        </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="disAllowedTokens" minOccurs="0">
+                        <xs:simpleType>
+                            <xs:list itemType="xs:string"/>
+                        </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="constantTypesBlackList" minOccurs="0">
+                        <xs:simpleType>
+                            <xs:list itemType="xs:string"/>
+                        </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="closuresAllowed" type="xs:boolean" minOccurs="0"/>
+                    <xs:element name="indirectImportCheckEnabled" type="xs:boolean" minOccurs="0"/>
+                    <xs:element name="methodDefinitionAllowed" type="xs:boolean" minOccurs="0"/>
+                    <xs:element name="packageAllowed" type="xs:boolean" minOccurs="0"/>
+                </xs:all>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="genAuthMapping">
+        <xs:complexContent>
+            <xs:extension base="ap:genBase">
+                <xs:all>
+                    <xs:element name="role" type="xs:string" minOccurs="0"/>
+                    <xs:element name="privileges" minOccurs="0">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="permission" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:all>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="genUIExtension">
+        <xs:complexContent>
+            <xs:extension base="ap:genScriptableInst">
+                <xs:sequence>
+                    <xs:element name="authPrivilege" type="xs:string" minOccurs="0"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="genMicroservice">
+        <xs:complexContent>
+            <xs:extension base="ap:genScriptableInst">
+                <xs:sequence>
+                    <xs:element name="localOnly" type="xs:boolean"/>
+                    <xs:element name="usageDocs" type="xs:string" minOccurs="0"/>
+                    <xs:element name="authPrivilege" type="xs:string" minOccurs="0"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="genEventListenerDataBlockAlert">
+        <xs:complexContent>
+            <xs:extension base="ap:genEventListenerBaseInst">
+                <xs:sequence>
+                    <xs:element name="schemaFilter" type="xs:string" minOccurs="0"/>
+                    <xs:element name="dataBlockCollectionFilter" type="xs:string" minOccurs="0"/>
+                    <xs:element name="symbolFilter" type="xs:string" minOccurs="0"/>
+                    <xs:element name="alertLevelFilter" type="xs:int" minOccurs="0"/>
+                    <xs:element name="activatingFilter" type="xs:boolean" minOccurs="0"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="genEventListenerBaseInst" abstract="true">
+        <xs:complexContent>
+            <xs:extension base="ap:genScriptableInst">
+                <xs:all/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="genEventListenerConsDataBlock">
+        <xs:complexContent>
+            <xs:extension base="ap:genEventListenerBaseInst">
+                <xs:sequence>
+                    <xs:element name="schemaFilter" type="xs:string" minOccurs="0"/>
+                    <xs:element name="dataBlockCollectionFilter" type="xs:string" minOccurs="0"/>
+                    <xs:element name="symbolFilter" type="xs:string" minOccurs="0"/>
+                    <xs:element name="violatedFilter" type="xs:boolean" minOccurs="0"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="genEventListenerRawDataBlock">
+        <xs:complexContent>
+            <xs:extension base="ap:genEventListenerBaseInst">
+                <xs:sequence>
+                    <xs:element name="schemaFilter" type="xs:string" minOccurs="0"/>
+                    <xs:element name="dataBlockCollectionFilter" type="xs:string" minOccurs="0"/>
+                    <xs:element name="symbolFilter" type="xs:string" minOccurs="0"/>
+                    <xs:element name="dataFeedFilter" type="xs:string" minOccurs="0"/>
+                    <xs:element name="violatedFilter" type="xs:boolean" minOccurs="0"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="genEventListenerDataFeed">
+        <xs:complexContent>
+            <xs:extension base="ap:genEventListenerBaseInst">
+                <xs:sequence>
+                    <xs:element name="schemaFilter" type="xs:string" minOccurs="0"/>
+                    <xs:element name="dataFeedFilter" type="xs:string" minOccurs="0"/>
+                    <xs:element name="returnCodeFilter" type="xs:int" minOccurs="0"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="genEventListenerCustom">
+        <xs:complexContent>
+            <xs:extension base="ap:genEventListenerBaseInst">
+                <xs:sequence>
+                    <xs:element name="namespaceFilter" type="xs:string" minOccurs="0"/>
+                    <xs:element name="idx1Filter" type="xs:string" minOccurs="0"/>
+                    <xs:element name="idx2Filter" type="xs:string" minOccurs="0"/>
+                    <xs:element name="idx3Filter" type="xs:string" minOccurs="0"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="genKaiToolExtension">
+        <xs:all>
+            <xs:element name="description" type="xs:string" minOccurs="0"/>
+            <xs:element name="className" type="xs:string" minOccurs="0"/>
+            <xs:element name="executionDomain" type="xs:string" minOccurs="0"/>
+        </xs:all>
+        <xs:attribute name="name" type="xs:string"/>
+    </xs:complexType>
+
+    <xs:complexType name="genKaiSpecification">
+        <xs:complexContent>
+            <xs:extension base="ap:genBase">
+                <xs:all>
+                    <xs:element name="description" type="xs:string" minOccurs="0"/>
+                    <xs:element name="specification" type="xs:string" minOccurs="0"/>
+                    <xs:element name="userFollowUp" type="xs:string" minOccurs="0"/>
+                    <xs:element name="kaiSpecHash" type="xs:string" minOccurs="0"/>
+                    <xs:element name="triggerReason" type="xs:string" minOccurs="0"/>
+                    <xs:element name="kaiConvoChain" type="xs:string" minOccurs="0"/>
+                    <xs:element name="specFiles" minOccurs="0">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="specFile" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:all>
+                <xs:attribute name="name" type="xs:string"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="genKaiSpecCascaded">
+        <xs:complexContent>
+            <xs:extension base="ap:genKaiSpecification">
+                <xs:sequence>
+                    <xs:element name="cascadeEntityType" type="ap:genCascadeEntityType" minOccurs="0"/>
+                    <xs:element name="cascadeTriggerCode" type="xs:string" minOccurs="0"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="genKaiTrainingExtension">
+        <xs:complexContent>
+            <xs:extension base="ap:genBase">
+                <xs:all>
+                    <xs:element name="description" type="xs:string" minOccurs="0"/>
+                    <xs:element name="ictGroups" minOccurs="0">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="ictGroup" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="specification" type="xs:string" minOccurs="0"/>
+                    <xs:element name="phase" type="ap:genKaiPhase" minOccurs="0"/>
+                    <xs:element name="autoLoad" type="xs:boolean" minOccurs="0"/>
+                    <xs:element name="order" type="xs:int" minOccurs="0"/>
+                </xs:all>
+                <xs:attribute name="name" type="xs:string" use="required"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:simpleType name="dataType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="STRING"/>
+            <xs:enumeration value="INTEGER"/>
+            <xs:enumeration value="DOUBLE"/>
+            <xs:enumeration value="DECIMAL"/>
+            <xs:enumeration value="JSON"/>
+            <xs:enumeration value="XML"/>
+            <xs:enumeration value="BLOB"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="knownDefType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="AGGREGATION_SERVICE"/>
+            <xs:enumeration value="AI_CHAT_ALGORITHM"/>
+            <xs:enumeration value="REST_EXTENSION_PROCESS_SERVICE"/>
+            <xs:enumeration value="AUTHENTICATION_SERVICE"/>
+            <xs:enumeration value="AUTHORIZATION_SERVICE"/>
+            <xs:enumeration value="FEED_PROCESS_SERVICE"/>
+            <xs:enumeration value="REST_EXTENSION"/>
+            <xs:enumeration value="SCHEDULED_SCRIPT"/>
+            <xs:enumeration value="CALLABLE_SCRIPT"/>
+            <xs:enumeration value="FAST_CALLABLE"/>
+            <xs:enumeration value="DATA_FEED"/>
+            <xs:enumeration value="DATA_SINK"/>
+            <xs:enumeration value="UI_EXTENSION"/>
+            <xs:enumeration value="MICRO_SVC"/>
+            <xs:enumeration value="DATA_SOURCE"/>
+            <xs:enumeration value="DISTRIBUTION_FORMATTER"/>
+            <xs:enumeration value="EVENT_LISTENER"/>
+            <xs:enumeration value="DATABLOCK_COLLECTION_FILTER"/>
+            <xs:enumeration value="DATAPOINT_CONSOLIDATION_ALGORITHM"/>
+            <xs:enumeration value="CONS_DATAPOINT_VALIDATOR"/>
+            <xs:enumeration value="CONS_DATABLOCK_ALERT_CALC"/>
+            <xs:enumeration value="CONS_DATAPOINT_PROCESSOR"/>
+            <xs:enumeration value="RAW_DATAPOINT_PROCESSOR"/>
+            <xs:enumeration value="RAW_FIELD_CLEANSER"/>
+            <xs:enumeration value="CONS_DATABLOCK_PROCESSOR"/>
+            <xs:enumeration value="DATA_TRANSFORMER"/>
+            <xs:enumeration value="RAW_DATAPOINT_VALIDATOR"/>
+            <xs:enumeration value="OBJECT_REPOSITORY"/>
+            <xs:enumeration value="DATAPOINT_COLLECTION_FILTER"/>
+            <xs:enumeration value="CRYTPO_MANAGER"/>
+            <xs:enumeration value="SECRET_MANAGER"/>
+            <xs:enumeration value="GENERAL_COMPONENT"/>
+            <xs:enumeration value="CHAT_BOT_PLUGIN"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="knownImplementationLanguage">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="CLASS"/>
+            <xs:enumeration value="GROOVY"/>
+            <xs:enumeration value="SPRING"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="genCascadeEntityType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="SCHEMA"/>
+            <xs:enumeration value="DATAFEED"/>
+            <xs:enumeration value="MICROSERVICE"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="genKaiPhase">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="SPEC"/>
+            <xs:enumeration value="CODEGEN"/>
+            <xs:enumeration value="ALL"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>
