@@ -19,13 +19,6 @@
         </envProperty>
 
         <envProperty>
-            <name>GITHUB_USERNAME</name>
-            <description>This is my username to access GitHub repositories</description>
-            <value>christosptr</value>
-            <encrypted>false</encrypted>
-        </envProperty>
-
-        <envProperty>
             <name>GIT_REPO_MAIN_PLUGIN_SBR_CONNECTOR</name>
             <description>Business Registration plugin</description>
             <value>https://github.com/christosptr/wp-api-git.git</value>
